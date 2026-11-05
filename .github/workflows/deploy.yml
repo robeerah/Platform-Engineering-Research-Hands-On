@@ -1,0 +1,33 @@
+name: Deploy Apps
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "lib/**"
+      - "phase-1-nomad-consul/**"
+      - "phase-5-golden-path/**"
+      - ".github/workflows/**"
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  deploy:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - app_name: my-webapp
+            config_file: phase-1-nomad-consul/simple-config.json
+          - app_name: golden-app
+            config_file: phase-5-golden-path/app-config.json
+    uses: ./.github/workflows/build-and-deploy.yml
+    with:
+      app_name: ${{ matrix.app_name }}
+      config_file: ${{ matrix.config_file }}
+      environment: dev
+    secrets: inherit

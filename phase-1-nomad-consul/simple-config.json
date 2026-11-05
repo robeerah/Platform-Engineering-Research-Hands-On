@@ -1,0 +1,7 @@
+{
+  "app_name": "my-webapp",
+  "message": "Hello from Platform Engineering!",
+  "cpu": 100,
+  "memory": 64,
+  "count": 1
+}

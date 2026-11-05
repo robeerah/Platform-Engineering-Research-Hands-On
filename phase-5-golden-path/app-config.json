@@ -1,0 +1,8 @@
+{
+  "app_name": "golden-app",
+  "message": "I was deployed by the Golden Path!",
+  "cpu": 100,
+  "memory": 64,
+  "count": 1,
+  "route_path": "/api/v1/golden-app"
+}

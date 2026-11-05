@@ -1,0 +1,4 @@
+consul.exe
+nomad.exe
+*.nomad.hcl
+!phase-1-nomad-consul/webapp.nomad.hcl

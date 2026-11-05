@@ -1,0 +1,13 @@
+{
+  "uri": "/api/v1/my-webapp/*",
+  "plugins": {
+    "limit-count": {
+      "count": 100,
+      "time_window": 60,
+      "rejected_code": 429,
+      "key_type": "var",
+      "key": "remote_addr"
+    },
+    "prometheus": {}
+  }
+}
